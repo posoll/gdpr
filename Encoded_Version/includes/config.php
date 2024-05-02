@@ -1,0 +1,3 @@
+<?php
+$domaintoproxy = "thepiratebay.se";
+?>
