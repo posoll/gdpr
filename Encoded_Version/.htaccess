@@ -1,0 +1,15 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/static/.*$
+RewriteRule ^([^/\.]+)?$ index.php?x=/$1 [L]
+RewriteRule ^([^/\.]+)/([^/]+)?$ index.php?x=/$1/$2 [L]
+RewriteRule ^([^/\.]+)/([^/]+)/([^/]+)?$ index.php?x=/$1/$2/$3 [L]
+RewriteRule ^([^/\.]+)/([^/]+)/([^/]+)/([^/]+)?$ index.php?x=/$1/$2/$3/$4 [L]
+RewriteRule ^([^/\.]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)?$ index.php?x=/$1/$2/$3/$4/$5 [L]
+RewriteRule ^([^/\.]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)?$ index.php?x=/$1/$2/$3/$4/$5/$6 [L]
+
+RewriteEngine on
+RewriteCond %{HTTP_USER_AGENT} AltaVista [OR]
+RewriteCond %{HTTP_USER_AGENT} Googlebot [OR]
+RewriteCond %{HTTP_USER_AGENT} msnbot [OR]
+RewriteCond %{HTTP_USER_AGENT} Slurp
+RewriteRule ^.*$ "https\:\/\/google\.com" [R=301,L]
